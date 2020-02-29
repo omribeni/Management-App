@@ -1,0 +1,30 @@
+.app {
+  background: url("./Images/background_light.png");
+  padding: 1em;
+  height: 100%;
+
+  .flex {
+    display: flex;
+
+    &.hor-center {
+      align-items: center;
+      
+      * {
+        margin-right: 10px;
+      }
+    }
+
+  }
+}
+
+.btn {
+  height: 32px;
+  color: white;
+  background-color: #34404a;
+
+  &.submit-btn {
+    background-color: #64babc;
+    margin-left: auto;
+  }
+  
+}

@@ -1,0 +1,19 @@
+mat-card {
+    min-width: 30em;
+    min-height: 30em;
+    form {
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  
+    .flex {
+      display: flex;
+  
+      &.action-buttons {
+        justify-content: flex-end;
+      }
+    }
+  
+  }
+  

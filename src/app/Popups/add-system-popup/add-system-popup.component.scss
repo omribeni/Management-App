@@ -1,0 +1,33 @@
+
+mat-card {
+  min-width: 25em;
+
+  form {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .flex {
+    display: flex;
+
+    &.action-buttons {
+      
+      .btn-submit{
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .btn {
+    height: 32px;
+    color: white;
+    background-color: #34404a;
+  
+    &.submit-btn {
+    margin-left: auto;
+    background-color: #64babc;
+    }
+  }
+
+}
