@@ -1,11 +1,48 @@
 <div class="app">
-  <h1>{{title}}</h1>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1>SimpleCRM</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/accounts'"> Users </a>
+        <a mat-button [routerLink]="'/ Add Client'"> Add Client </a>
+        <a mat-button [routerLink]="'/Tokens'"> Tokens </a>
+        <a mat-button [routerLink]="'/Configurations'">Configurations</a>
+        <a mat-button [routerLink]="'/Upgrades'"> Upgrades </a>
 
-  <div class="flex hor-center">
-    <mat-icon>home</mat-icon>
-    <button mat-raised-button (click)="OpenAddSystemPopup()">Add System</button>
-    <button mat-raised-button (click)="OpenSystemConfigsPopup()">System Configuration</button>
-    <button mat-raised-button (click)="OpenCreateUpgradePopup()">Upgrade Scheduler</button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div style="height: 100%;">
+
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav>
+        <mat-nav-list>
+          <a mat-list-item [routerLink]="'/accounts'"> Users </a>
+          <a mat-list-item [routerLink]="'/ Add Client'"> Add Client </a>
+          <a mat-list-item [routerLink]="'/Tokens'"> Tokens </a>
+          <a mat-list-item [routerLink]="'/Configurations'">Configurations </a>
+          <a mat-list-item [routerLink]="'/Upgrades'">Upgrades</a>
+          <a mat-list-item (click)="sidenav.toggle()" mat-list-item>Close</a>
+          <router-outlet></router-outlet>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content class="content-container">
+        <h1>{{title}}</h1>
+        <div class="flex hor-center">
+          <mat-icon>home</mat-icon>
+          <button mat-raised-button (click)="OpenAddSystemPopup()">Add System</button>
+          <button mat-raised-button (click)="OpenSystemConfigsPopup()">System Configuration</button>
+          <button mat-raised-button (click)="OpenCreateUpgradePopup()">Upgrade Scheduler</button>
+        </div>
+        
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
+
+
 </div>
 <router-outlet></router-outlet>

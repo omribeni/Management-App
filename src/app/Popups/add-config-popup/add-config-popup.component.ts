@@ -1,5 +1,6 @@
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 
 @Component({
   selector: 'add-config-popup',
@@ -19,6 +20,9 @@ export class AddConfigPopupComponent implements OnInit {
   ]);
 
   ngOnInit() {
+    var x :any[] = [];
+    x.forEach(element => {
+      
+    });  
   }
-
 }

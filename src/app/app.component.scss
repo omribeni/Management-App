@@ -1,20 +1,36 @@
 .app {
-  background: url("./Images/background_light.png");
-  padding: 1em;
-  height: 100%;
 
   .flex {
     display: flex;
 
     &.hor-center {
       align-items: center;
-      
+
       * {
         margin-right: 10px;
       }
     }
 
   }
+
+  mat-nav-list{
+    min-width: 300px;
+  }
+  .content-container {
+    background: url("./Images/background_light.png");
+    height: 91vh;
+    padding: 1em;
+  }
+
+  .example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+
 }
 
 .btn {
@@ -26,5 +42,5 @@
     background-color: #64babc;
     margin-left: auto;
   }
-  
+
 }

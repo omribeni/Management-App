@@ -6,7 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule, MatDialogModule, MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { CreateUpgradePopupComponent } from './create-upgrade-popup/create-upgrade-popup.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { CreateUpgradePopupComponent } from './create-upgrade-popup/create-upgra
     MatIconModule,
     FormsModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatSlideToggleModule,
     MatSelectModule
   ],
   entryComponents: [AddSystemComponent, AddConfigPopupComponent, CreateUpgradePopupComponent],

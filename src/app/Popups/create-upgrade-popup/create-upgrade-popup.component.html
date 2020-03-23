@@ -1,25 +1,94 @@
 <mat-card>
-    <mat-card-title>System Upgrade</mat-card-title>
-        <mat-card-subtitle>
-        </mat-card-subtitle>
+  <mat-card-title>System Upgrade</mat-card-title>
+  <mat-card-subtitle>
+  </mat-card-subtitle>
 
-    <mat-card-content>
-        <form class="">
-            <mat-form-field class="">
-              <mat-label>System Name</mat-label>
-              <input matInput [formControl]="NewSystemForm" [errorStateMatcher]="matcher"
-                     placeholder="Insert System Identifier">
-              <mat-hint></mat-hint>
-              <mat-error *ngIf="NewSystemForm.hasError() && !NewSystemForm.hasError('required')">
-                Please enter a valid system name 
-              </mat-error>
-              <mat-error *ngIf="NewSystemForm.hasError('required')">
-                Name is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </form>
-    </mat-card-content>  
-    <mat-card-actions class="flex action-buttons">
-        <button mat-button (click)="SubmitNewSystem()">Submit</button>
-      </mat-card-actions>
+  <mat-card-content>
+    <form class="">
+
+      <mat-form-field>
+        <mat-label>System Name</mat-label>
+        <mat-select [formControl]="pokemonControl">
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+            <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+              {{pokemon.viewValue}}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Remote Version</mat-label>
+        <mat-select [formControl]="pokemonControl">
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+            <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+              {{pokemon.viewValue}}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="">
+        <mat-slide-toggle>Force</mat-slide-toggle>
+      </mat-form-field>
+
+      <mat-form-field class="">
+        <mat-slide-toggle>Use Local Versions</mat-slide-toggle>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Local Version</mat-label>
+        <mat-select [formControl]="pokemonControl">
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+            <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+              {{pokemon.viewValue}}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="">
+        <mat-label>Description</mat-label>
+        <input matInput [formControl]="NewSystemForm" [errorStateMatcher]="matcher"
+          placeholder="Insert System Identifier">
+        <mat-hint></mat-hint>
+        <mat-error *ngIf="NewSystemForm.hasError() && !NewSystemForm.hasError('required')">
+          Please enter a valid system name
+        </mat-error>
+        <mat-error *ngIf="NewSystemForm.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="">
+        <mat-label>Files Path</mat-label>
+        <input matInput [formControl]="NewSystemForm" [errorStateMatcher]="matcher"
+          placeholder="Insert System Identifier">
+        <mat-hint></mat-hint>
+        <mat-error *ngIf="NewSystemForm.hasError() && !NewSystemForm.hasError('required')">
+          Please enter a valid system name
+        </mat-error>
+        <mat-error *ngIf="NewSystemForm.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="">
+        <mat-slide-toggle>Schedule Time</mat-slide-toggle>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <!-- <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker> -->
+      </mat-form-field>
+
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="flex action-buttons">
+    <button mat-button (click)="SubmitNewSystem()">Submit</button>
+  </mat-card-actions>
 </mat-card>
